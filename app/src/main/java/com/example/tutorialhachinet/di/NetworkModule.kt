@@ -30,5 +30,6 @@ val networkModule = module {
 
   single { get<Retrofit>().create(MarvelService::class.java) }
 
-  single { (marvelService: MarvelService) -> MarvelClient(marvelService) }
+//  single { (marvelService: MarvelService) -> MarvelClient(marvelService) }
+  single { MarvelClient(get()) }
 }

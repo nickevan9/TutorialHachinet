@@ -17,8 +17,10 @@
 package com.example.tutorialhachinet.binding
 
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.OnBackPressedDispatcherOwner
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -41,17 +43,10 @@ object ViewBinding {
   fun bindLoadImagePalette(view: AppCompatImageView, url: String, paletteCard: MaterialCardView) {
     Glide.with(view.context)
       .load(url)
-      .listener(
-        GlidePalette.with(url)
-          .use(BitmapPalette.Profile.MUTED_LIGHT)
-          .intoCallBack { palette ->
-            val rgb = palette?.dominantSwatch?.rgb
-            if (rgb != null) {
-              paletteCard.setCardBackgroundColor(rgb)
-            }
-          }.crossfade(true)
-      ).into(view)
+      .fitCenter()
+      .into(view)
   }
+
 
 
   @JvmStatic

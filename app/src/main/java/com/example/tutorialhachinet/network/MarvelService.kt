@@ -9,7 +9,7 @@ interface MarvelService {
 
   @GET("characters")
   suspend fun fetchCharacters(
-    @Query("apiKey") apiKey : String,
+    @Query("apikey") apiKey : String,
     @Query("ts") ts : String,
     @Query("hash") hash : String,
     @Query("limit") limit: Int = 20,

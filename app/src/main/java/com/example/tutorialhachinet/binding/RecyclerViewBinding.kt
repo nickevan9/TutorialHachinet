@@ -28,10 +28,12 @@ object RecyclerViewBinding {
         RecyclerViewPaginator(
             recyclerView = view,
             isLoading = { viewModel.isLoading },
-            loadMore = { viewModel.fetchNextCharacterList() },
+            loadMore = {
+                viewModel.fetchNextCharacterList()
+                       },
             onLast = { false }
         ).run {
-            threshold = 8
+            threshold = 4
         }
     }
 }

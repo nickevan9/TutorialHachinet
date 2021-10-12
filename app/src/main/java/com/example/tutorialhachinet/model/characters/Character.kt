@@ -1,5 +1,7 @@
 package com.example.tutorialhachinet.model.characters
 
+import timber.log.Timber
+
 
 data class Character(
     val id: Int,
@@ -15,6 +17,8 @@ data class Character(
     val urls: List<Url>
 ) {
     fun getImageUrl(): String {
-        return thumbnail.path + thumbnail.extension
+        Timber.d("${thumbnail.path}.${thumbnail.extension}")
+        return "${thumbnail.path}.${thumbnail.extension}"
+
     }
 }
