@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">TutorialHachinet</string>
+    <string name="database">MarvelDatabase</string>
+    <string name="title_home">Home</string>
+    <string name="title_info">Comic</string>
 </resources>
